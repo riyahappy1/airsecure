@@ -8,7 +8,22 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+
+
+import { Stack } from 'expo-router';
+
+export function Layout() {
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="auth/login" />
+      <Stack.Screen name="auth/signup" />
+    </Stack>
+  );
+}
+
+
+
+export function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
